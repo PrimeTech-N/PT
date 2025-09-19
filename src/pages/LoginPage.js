@@ -12,10 +12,11 @@ function LoginPage() {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:5000/auth/login", {
-        username,
-        password,
-      });
+      const res = await axios.post("https://prime-tech-backend-1.onrender.com/auth/login", {
+  username,
+  password,
+});
+
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("role", res.data.role);
       navigate("/dashboard");
